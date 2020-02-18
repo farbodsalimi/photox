@@ -14,9 +14,11 @@ import (
 
 // Run run photox
 func Run(fromPath string, toPath string) {
+	dm := util.DirectoryManager{CachedDirectories: make(map[string]bool)}
+
 	// Prepare a folder for undefined photos
 	undefinedPath := path.Join(toPath, config.BasePath, config.UndefinedPath)
-	util.PrepareDirectory(nil, undefinedPath)
+	dm.PrepareDirectory(undefinedPath)
 
 	// List all the supported files
 	var files []string
@@ -26,9 +28,6 @@ func Run(fromPath string, toPath string) {
 	}
 
 	fmt.Printf("Processing %d files ...", len(files))
-
-	// A map of newly created directories
-	directories := make(map[string]bool)
 
 	for index, file := range files {
 		fmt.Printf("\n↻ Processing file: %d %s\n", index, file)
@@ -59,9 +58,9 @@ func Run(fromPath string, toPath string) {
 
 		// Make a path and directory for the taken datetime
 		p := util.MakePathByTakenDateTime(path.Join(toPath, config.BasePath), taken)
-		if !directories[p] {
+		if !dm.IsCachedDirectory(p) {
 			fmt.Printf("❐ Making directory: %s\n", p)
-			util.PrepareDirectory(directories, p)
+			dm.PrepareDirectory(p)
 		}
 
 		// Copy the file into the taken directory
