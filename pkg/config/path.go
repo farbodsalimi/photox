@@ -4,4 +4,4 @@ package config
 const BasePath = "/photox"
 
 // UndefinedPath defines a base path for undefined photos
-const UndefinedPath = "/_undefined"
+const UndefinedPath = BasePath + "/_undefined"

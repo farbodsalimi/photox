@@ -8,8 +8,8 @@ import (
 	"github.com/rwcarlsen/goexif/exif"
 	log "github.com/sirupsen/logrus"
 
-	"photox/src/config"
-	"photox/src/util"
+	"photox/pkg/config"
+	"photox/pkg/util"
 )
 
 // Run run photox

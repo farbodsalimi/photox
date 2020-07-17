@@ -8,12 +8,12 @@ import (
 	log "github.com/sirupsen/logrus"
 
 	"path/filepath"
-	"photox/src/config"
+	"photox/pkg/config"
 )
 
 // CopyFile copies files using cp command
-func CopyFile(srcFile string, destFile string) {
-	cpCmd := exec.Command("cp", srcFile, destFile)
+func CopyFile(pkgFile string, destFile string) {
+	cpCmd := exec.Command("cp", pkgFile, destFile)
 	err := cpCmd.Run()
 	if err != nil {
 		log.Fatal("copyFile: ", err)

@@ -7,8 +7,8 @@ import (
 
 	"github.com/google/subcommands"
 
-	photox "photox/src"
-	"photox/src/config"
+	photox "photox/pkg"
+	"photox/pkg/config"
 )
 
 type runCmd struct {

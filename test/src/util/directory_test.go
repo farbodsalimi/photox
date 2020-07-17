@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"photox/src/util"
+	"photox/pkg/util"
 )
 
 func TestMakePathByTakenDateTime(t *testing.T) {
