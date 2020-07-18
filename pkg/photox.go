@@ -17,7 +17,7 @@ func Run(fromPath string, toPath string) {
 	dm := util.DirectoryManager{CachedDirectories: make(map[string]bool)}
 
 	// Prepare a folder for undefined photos
-	undefinedPath := path.Join(toPath, config.BasePath, config.UndefinedPath)
+	undefinedPath := path.Join(toPath, util.GetHomeDir(), config.BasePath, config.UndefinedPath)
 	dm.PrepareDirectory(undefinedPath)
 
 	// List all the supported files
