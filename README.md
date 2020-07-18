@@ -1,6 +1,6 @@
 # photox
 
-Photox is a cli tool that automatically move photos to directories based on exif date taken.
+Photox is a cli tool that automatically moves photos to directories based on exif date taken.
 
 ## Installation
 
