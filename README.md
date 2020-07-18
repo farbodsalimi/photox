@@ -8,4 +8,6 @@ make install
 
 ## Example
 
-photox run --from ~/Downloads/Pictures/iPhone
+```bash
+photox run --from ~/Downloads/iphone/photos --to ~/organized_photos
+```
